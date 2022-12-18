@@ -2,7 +2,7 @@ FROM openjdk:19
 
 ENV ENVIROMENT=prod
 
-MAINTAINER Bassam Kharashfeh <Axel.Haar@hygene.de>
+MAINTAINER Bassam Kharashfeh <bk@kharashfeh.com>
 
 EXPOSE 8080
 
