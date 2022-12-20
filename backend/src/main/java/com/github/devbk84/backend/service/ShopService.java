@@ -4,7 +4,7 @@ import com.github.devbk84.backend.models.Product;
 import com.github.devbk84.backend.repo.ShopRepo;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 @Service
