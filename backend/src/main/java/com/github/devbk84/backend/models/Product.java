@@ -7,11 +7,12 @@ import java.math.BigDecimal;
 
 @Document("products")
 public record Product(
+
         @Id
-        String name,
         String id,
+        String name,
         String description,
-        String orderfavorites,
+        String orderFavorites,
         BigDecimal price) {
 
 }

@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700");
+
+.willkommensscreen {
+    align-items: flex-start;
+    background-color: var(--black-haze);
+    display: flex;
+    height: 874px;
+    overflow: hidden;
+    position: relative;
+    width: 362px;
+}
+
+.overlap-group1 {
+    height: 1023px;
+    margin-left: -365px;
+    margin-top: -211px;
+    position: relative;
+    width: 1218px;
+    z-index: 1;
+}
+
+.hintergrund {
+    height: 812px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 211px;
+    width: 1218px;
+}
+
+.banderole_-logo {
+    height: 440px;
+    left: 465px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 176px;
+}
+
+.group-340 {
+    background-color: var(--summer-green);
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    height: 48px;
+    left: 465px;
+    position: absolute;
+    top: 923px;
+    width: 176px;
+}
+
+.text {
+    display: flex;
+    flex: 1;
+    height: 24px;
+    margin-left: 5px;
+    margin-right: 4px;
+    margin-top: 12px;
+}
+
+.checkout {
+    flex: 1;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin-bottom: -2px;
+    margin-right: -2px;
+    text-align: center;
+    width: 169px;
+}
+
+.cit-kar-250222-5 {
+    height: 315px;
+    left: 343px;
+    object-fit: cover;
+    position: absolute;
+    top: 582px;
+    width: 487px;
+}
+
+.title {
+    color: var(--log-cabin);
+    font-family: var(--font-family-open_sans);
+    font-size: var(--font-size-m);
+    font-weight: 700;
+    left: 425px;
+    letter-spacing: 0;
+    line-height: 33px;
+    position: absolute;
+    text-align: center;
+    top: 483px;
+    white-space: nowrap;
+}
+
+.x941-am {
+    color: var(--log-cabin);
+    font-family: var(--font-family-sfpro_text-medium);
+    font-size: var(--font-size-xxxl);
+    font-weight: 500;
+    left: 34px;
+    letter-spacing: 0;
+    line-height: 15px;
+    position: fixed;
+    text-align: center;
+    top: 16px;
+    white-space: nowrap;
+    z-index: 5;
+}
+
+.icon-bar_chart {
+    height: 11px;
+    left: 293px;
+    object-fit: cover;
+    position: fixed;
+    top: 17px;
+    width: 17px;
+    z-index: 3;
+}
+
+.icon-signal {
+    height: 11px;
+    left: 316px;
+    object-fit: cover;
+    position: fixed;
+    top: 17px;
+    width: 15px;
+    z-index: 2;
+}
