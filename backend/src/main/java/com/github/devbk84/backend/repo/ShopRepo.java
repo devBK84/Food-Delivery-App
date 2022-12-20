@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface ShopRepo extends MongoRepository<Product, String> {
 
-    List<Product> getAllproducts();
+    List<Product> getAllProducts();
 }
