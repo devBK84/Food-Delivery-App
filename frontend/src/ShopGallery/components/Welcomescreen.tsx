@@ -2,9 +2,9 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "./Welcomescreen.css";
 import "../../App.css"
-import hintergrund from "../../static/img/img/hintergrund@1x.png"
-import banderole_Logo from "../../static/img/img/banderole-logo-1@1x.png"
-import citkar2502225 from "../../static/img/img/citkar-250222-5-1@1x.png"
+import hintergrund from "../../static/img/hintergrund@1x.png"
+import banderole_Logo from "../../static/img/banderole-logo-1@1x.png"
+import citkar2502225 from "../../static/img/citkar-250222-5-1@1x.png"
 
 export default function Welcomescreen() {
 
