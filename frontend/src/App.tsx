@@ -1,7 +1,7 @@
-
 import React from 'react';
-
 import './App.css';
+
+import Welcomescreen from "./ShopGallery/components/Welcomescreen";
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <header className="App-header">
 
       </header>
+        <Welcomescreen></Welcomescreen>
     </div>
   );
 }
