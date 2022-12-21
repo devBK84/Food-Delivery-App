@@ -1,38 +1,181 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.battery {
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  gap: 1px;
+  margin-left: 6px;
+  margin-top: 1.56px;
+  min-width: 22px;
 }
 
-.App-link {
-  color: #61dafb;
+.overlap-group-2 {
+  border-radius: 2.5px;
+  height: 10px;
+  position: relative;
+  width: 19px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fill-1 {
+  background-color: var(--white);
+  border-radius: 1px;
+  height: 6px;
+  left: 2px;
+  position: absolute;
+  top: 2px;
+  width: 15px;
 }
+
+.outline-1 {
+  border: 1px solid;
+  border-color: var(--white);
+  border-radius: 2.5px;
+  height: 10px;
+  left: 0;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  width: 19px;
+}
+
+.tip {
+  height: 4px;
+  margin-bottom: 0;
+  object-fit: cover;
+  width: 2px;
+}
+
+.battery.battery-1,
+.battery.battery-2,
+.battery.battery-3,
+.battery.battery-5 {
+  height: 10px;
+  left: 337px;
+  margin-left: unset;
+  margin-top: unset;
+  position: fixed;
+  top: 18px;
+  z-index: 4;
+}
+
+.battery.battery-1 .fill-1 {
+  background-color: var(--log-cabin);
+}
+
+.battery.battery-1 .outline-1 {
+  border-color: var(--log-cabin);
+}
+
+.battery.battery-4 {
+  height: 10px;
+  left: 338px;
+  margin-left: unset;
+  margin-top: unset;
+  position: fixed;
+  top: 18px;
+  z-index: 4;
+}
+
+.battery.battery-7 {
+  height: 10px;
+  left: 337px;
+  margin-left: unset;
+  margin-top: unset;
+  position: fixed;
+  top: 18px;
+  z-index: 3;
+}
+
+.battery.battery-8 {
+  height: 10px;
+  left: 337px;
+  margin-left: unset;
+  margin-top: unset;
+  position: fixed;
+  top: 18px;
+  z-index: 8;
+}
+
+.battery.battery-14,
+.battery.battery-25 {
+  height: 10px;
+  left: 337px;
+  margin-left: unset;
+  margin-top: unset;
+  position: fixed;
+  top: 18px;
+  z-index: 9;
+}
+
+.battery.battery-16 {
+  height: 10px;
+  left: 337px;
+  margin-left: unset;
+  margin-top: unset;
+  position: fixed;
+  top: 18px;
+  z-index: 16;
+}
+
+.battery.battery-20,
+.battery.battery-27,
+.battery.battery-28,
+.battery.battery-29 {
+  height: 10px;
+  left: 337px;
+  margin-left: unset;
+  margin-top: unset;
+  position: fixed;
+  top: 18px;
+  z-index: 11;
+}
+
+.battery.battery-22 {
+  height: 10px;
+  left: 337px;
+  margin-left: unset;
+  margin-top: unset;
+  position: fixed;
+  top: 18px;
+  z-index: 13;
+}
+
+.battery.battery-23 {
+  height: 10px;
+  left: 337px;
+  margin-left: unset;
+  margin-top: unset;
+  position: fixed;
+  top: 18px;
+  z-index: 18;
+}
+
+.battery.battery-24 {
+  height: 10px;
+  left: 337px;
+  margin-left: unset;
+  margin-top: unset;
+  position: fixed;
+  top: 18px;
+  z-index: 19;
+}
+
+.battery.battery-26 {
+  height: 10px;
+  left: 337px;
+  margin-left: unset;
+  margin-top: unset;
+  position: fixed;
+  top: 18px;
+  z-index: 10;
+}
+
+.battery.battery-30,
+.battery.battery-31 {
+  height: 10px;
+  left: 337px;
+  margin-left: unset;
+  margin-top: unset;
+  position: fixed;
+  top: 18px;
+  z-index: 14;
+}
+
