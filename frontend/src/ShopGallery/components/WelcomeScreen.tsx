@@ -1,16 +1,16 @@
 import React from "react";
-import "./Welcomescreen.css";
+import "./WelcomeScreen.css";
 import "../../App.css"
 import hintergrund from "../../static/img/hintergrund@1x.png"
 import banderole_Logo from "../../static/img/banderole-logo-1@1x.png"
 import citkar2502225 from "../../static/img/citkar-250222-5-1@1x.png"
 
-export default function Welcomescreen() {
+export default function WelcomeScreen() {
 
 
     return (
         <div className="container-center-horizontal">
-            <div className="Welcomescreen">
+            <div className="WelcomeScreen">
                 <div className="overlap-group1">
                     <img className="hintergrund" src={hintergrund} alt="Hintergrund"/>
                     <img className="banderole_-logo" src={banderole_Logo} alt="Banderole_Logo"/>
