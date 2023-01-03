@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import Welcomescreen from "./ShopGallery/components/Welcomescreen";
+import WelcomeScreen from "./ShopGallery/components/WelcomeScreen";
 import ProductApp from "./ShopGallery/components/ProductApp";
 
 
@@ -13,7 +13,7 @@ function App() {
             <header className="App-header">
             <ProductApp/>
             </header>
-            <Welcomescreen></Welcomescreen>
+            <WelcomeScreen></WelcomeScreen>
         </div>
     );
 }
