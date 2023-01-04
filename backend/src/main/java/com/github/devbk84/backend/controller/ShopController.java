@@ -2,9 +2,9 @@ package com.github.devbk84.backend.controller;
 
 import com.github.devbk84.backend.models.Product;
 import com.github.devbk84.backend.service.ShopService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,4 +25,15 @@ public class ShopController {
         return shopService.getAllProducts();
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity <Product> updateProduct(
+            @PathVariable String id,
+            @RequestBody Product shopService) {
+        return shopService.equals(id, updateProduct());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Product> deleteProduct(@PathVariable String id) {
+        return new ResponseEntity<>(new Product(id), HttpStatus.OK);
+    }
 }
