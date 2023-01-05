@@ -1,7 +1,7 @@
 package com.github.devbk84.backend.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.devbk84.backend.repo.ShopRepo;
+import com.github.devbk84.backend.repo.ProductRepo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -15,7 +15,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 @SpringBootTest
 @AutoConfigureMockMvc
-class ShopControllerTest {
+class ProductControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -24,7 +24,7 @@ class ShopControllerTest {
     private WebApplicationContext context;
 
     @Autowired
-    private ShopRepo shopRepo;
+    private ProductRepo productRepo;
 
     @Autowired
     private ObjectMapper objectMapper;
