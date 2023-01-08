@@ -7,12 +7,11 @@ import citkar2502225 from "../../static/img/citkar-250222-5-1@1x.png"
 import {useNavigate} from "react-router-dom";
 
 
-
 export default function WelcomeScreen() {
 
     const navigate = useNavigate()
 
-    function handleDetailsClick(){
+    function handleDetailsClick() {
         navigate("/products")
     }
 
