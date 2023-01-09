@@ -13,7 +13,7 @@ export default function ProductGallery(props: ShopGalleryProps){
 
     const productsCards = props.products.map(product =>{
         return (
-            <ProductCard product={product} key={product.id}/>
+            <ProductCard key={product.id}/>
         )
     })
 
