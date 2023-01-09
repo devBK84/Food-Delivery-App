@@ -20,6 +20,6 @@ public class ProductService {
         return productRepo.findAll();
     }
 
-    public Product getProductsById(String id) {
+    public Product getProductById(String id) {
         return productRepo.findById(id).orElseThrow(); }
 }

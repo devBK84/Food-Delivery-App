@@ -38,7 +38,7 @@ class ProductServiceTest {
         // GIVEN
         Product expected = new Product(
                 "69",
-                "Milch",
+                "Milk",
                 "Test",
                 "orderFav",
                 new BigDecimal("1.50")
@@ -47,7 +47,7 @@ class ProductServiceTest {
 
         // WHEN
         when(productRepo.findById("69")).thenReturn(Optional.of(expected));
-        Product actual = productService.getProductsById("69");
+        Product actual = productService.getProductById("69");
 
         // THEN
         assertEquals(expected, actual);
