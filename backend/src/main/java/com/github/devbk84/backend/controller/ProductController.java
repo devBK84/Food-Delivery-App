@@ -1,6 +1,7 @@
 package com.github.devbk84.backend.controller;
 
 import com.github.devbk84.backend.models.Product;
+import com.github.devbk84.backend.models.ProductDTO;
 import com.github.devbk84.backend.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +32,7 @@ public class ProductController {
 
 
     @PutMapping(path = "/{id}")
-    public Product updateEntry(@PathVariable String id, @RequestBody Product entry){
+    public Product updateEntry(@PathVariable String id, @RequestBody ProductDTO entry){
         return productService.updateEntry(id, entry);
     }
 
