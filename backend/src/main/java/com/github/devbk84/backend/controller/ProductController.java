@@ -25,16 +25,20 @@ public class ProductController {
     }
 
     @GetMapping(path = "/{id}")
-    public Product getProductById(@PathVariable String id){
+    public Product getProductById (@PathVariable String id){
         return productService.getProductById(id);
     }
 
 
 
     @PutMapping(path = "/{id}")
-    public Product updateEntry(@PathVariable String id, @RequestBody ProductDTO entry){
+    public Product updateEntry (@PathVariable String id, @RequestBody ProductDTO entry){
         return productService.updateEntry(id, entry);
     }
 
-
+    @DeleteMapping(path = "/{id}")
+    public void deleteEntry (@PathVariable String id){
+        productService.deleteEntryByID(id);
+    }
 }
+

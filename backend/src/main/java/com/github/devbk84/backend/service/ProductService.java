@@ -35,4 +35,7 @@ public class ProductService {
 
             return productRepo.save(toEdit);
     }
+
+    public void deleteEntryByID(String id) { productRepo.deleteById(id);
+    }
 }
