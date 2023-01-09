@@ -34,7 +34,7 @@ class ProductServiceTest {
     }
 
     @Test
-    void getProductsById(){
+    void getProductById(){
         // GIVEN
         Product expected = new Product(
                 "69",
@@ -52,5 +52,20 @@ class ProductServiceTest {
         // THEN
         assertEquals(expected, actual);
         verify(productRepo).findById("69");
+    }
+
+    @Test
+    void deleteEntryByID(){
+        Product expectedProduct = new Product(
+                "8",
+                "Haferdrink",
+                "Test",
+                "orderFav",
+                new BigDecimal("1.50")
+        );
+
+        doNothing().when(productRepo).deleteById(isA(String.class));
+        productRepo.deleteById(expectedProduct.id());
+        verify(productRepo,times(1)).deleteById(expectedProduct.id());
     }
 }
