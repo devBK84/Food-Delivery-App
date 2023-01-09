@@ -4,21 +4,9 @@ import "./ProductCard.css"
 import bild_milch from "../../static/img/bild-milch-1@1x.png"
 import bild_laktosefrei from "../../static/img/bild-laktosefrei-1@1x.png"
 import bild_joghurt from "../../static/img/bild-joghurt-1@1x.png"
-import {Product} from "../model/Product";
-import {useNavigate} from "react-router-dom";
 
-type ProductCardProps = {
-    product: Product
 
-}
-
-export default function ProductCard(props: ProductCardProps) {
-
-    const navigate = useNavigate()
-
-    function handleDetailsClick() {
-        navigate("details/")
-    }
+export default function ProductCard() {
 
     return (
         <div>
