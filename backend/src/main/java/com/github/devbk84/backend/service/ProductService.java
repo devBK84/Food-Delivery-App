@@ -22,4 +22,16 @@ public class ProductService {
 
     public Product getProductById(String id) {
         return productRepo.findById(id).orElseThrow(); }
+
+
+    public Product updateEntry(String id, Product entryUpdate) {
+        Product toEdit = new Product(
+                id,
+                entryUpdate.name(),
+                entryUpdate.description(),
+                entryUpdate.orderFavorites(),
+                entryUpdate.price());
+
+            return productRepo.save(toEdit);
+    }
 }

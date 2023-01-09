@@ -30,15 +30,10 @@ public class ProductController {
 
 
 
-//    @PutMapping("/{id}")
-//    public ResponseEntity <Product> updateProduct(
-//            @PathVariable String id,
-//            @RequestBody Product shopService) {
-//        return shopService.equals(id, updateProduct());
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Product> deleteProduct(@PathVariable String id) {
-//        return new ResponseEntity<>(new Product(id));
-//    }
+    @PutMapping(path = "/{id}")
+    public Product updateEntry(@PathVariable String id, @RequestBody Product entry){
+        return productService.updateEntry(id, entry);
+    }
+
+
 }
