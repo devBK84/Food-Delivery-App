@@ -29,8 +29,6 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
-
-
     @PutMapping(path = "/{id}")
     public Product updateEntry (@PathVariable String id, @RequestBody ProductDTO entry){
         return productService.updateEntry(id, entry);
@@ -40,5 +38,10 @@ public class ProductController {
     public void deleteProduct (@PathVariable String id){
         productService.deleteEntryByID(id);
     }
+    @PostMapping
+    public Product saveEntry (@RequestBody ProductDTO entry){
+        return productService.saveEntry(entry);
+    }
 }
+
 

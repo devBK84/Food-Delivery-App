@@ -1,6 +1,7 @@
 package com.github.devbk84.backend.service;
 
 import com.github.devbk84.backend.models.Product;
+import com.github.devbk84.backend.models.ProductDTO;
 import com.github.devbk84.backend.repo.ProductRepo;
 import org.junit.jupiter.api.Test;
 
@@ -12,11 +13,11 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-
 class ProductServiceTest {
 
     ProductRepo productRepo = mock(ProductRepo.class);
-    ProductService productService = new ProductService(productRepo);
+    IDService idService = mock(IDService.class);
+    ProductService productService = new ProductService(productRepo, idService);
 
     @Test
     void getAllProducts() {
@@ -69,4 +70,30 @@ class ProductServiceTest {
         verify(productRepo,times(1)).deleteById(expectedProduct.id());
     }
 
+    @Test
+    void saveEntry() {
+        // GIVEN
+        Product expectedProduct = new Product(
+                "84",
+                "Milk",
+                "Test",
+                "Test",
+                new BigDecimal("1.50")
+        );
+
+        ProductDTO productToSave = new ProductDTO(
+                "Milk",
+                "Test",
+                "Test",
+                new BigDecimal("1.50")
+        );
+        // WHEN
+        when(productRepo.save(expectedProduct)).thenReturn(expectedProduct);
+        when(idService.generateID()).thenReturn("84");
+        Product actualProduct = productService.saveEntry(productToSave);
+
+        // THEN
+        assertEquals(expectedProduct, actualProduct);
+        verify(productRepo).save(expectedProduct);
+    }
 }
