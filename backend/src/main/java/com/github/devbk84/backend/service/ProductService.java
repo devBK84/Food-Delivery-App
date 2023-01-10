@@ -12,9 +12,11 @@ import java.util.List;
 public class ProductService {
 
     private final ProductRepo productRepo;
+    private final IDService idService;
 
-    public ProductService(ProductRepo productRepo) {
+    public ProductService(ProductRepo productRepo, IDService idService) {
         this.productRepo = productRepo;
+        this.idService = idService;
     }
 
     public List<Product> getAllProducts() {
@@ -37,5 +39,16 @@ public class ProductService {
     }
 
     public void deleteEntryByID(String id) { productRepo.deleteById(id);
+    }
+
+    public Product saveEntry( ProductDTO entryUpdate) {
+        Product toEdit = new Product(
+                idService.generateID(),
+                entryUpdate.name(),
+                entryUpdate.description(),
+                entryUpdate.orderFavorites(),
+                entryUpdate.price());
+
+        return productRepo.save(toEdit);
     }
 }
