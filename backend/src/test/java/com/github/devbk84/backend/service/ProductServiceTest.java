@@ -35,7 +35,7 @@ class ProductServiceTest {
     }
 
     @Test
-    void getProductById(){
+    void getProductById() {
         // GIVEN
         Product expected = new Product(
                 "69",
@@ -56,7 +56,7 @@ class ProductServiceTest {
     }
 
     @Test
-    void deleteEntryByID(){
+    void deleteEntryByID() {
         Product expectedProduct = new Product(
                 "8",
                 "Haferdrink",
@@ -67,14 +67,15 @@ class ProductServiceTest {
 
         doNothing().when(productRepo).deleteById(isA(String.class));
         productRepo.deleteById(expectedProduct.id());
-        verify(productRepo,times(1)).deleteById(expectedProduct.id());
+        verify(productRepo, times(1)).deleteById(expectedProduct.id());
     }
 
     @Test
-    void saveEntry() {
+    void saveProduct() {
         // GIVEN
+        String id ="84";
         Product expectedProduct = new Product(
-                "84",
+                id,
                 "Milk",
                 "Test",
                 "Test",
@@ -89,8 +90,8 @@ class ProductServiceTest {
         );
         // WHEN
         when(productRepo.save(expectedProduct)).thenReturn(expectedProduct);
-        when(idService.generateID()).thenReturn("84");
-        Product actualProduct = productService.saveEntry(productToSave);
+        when(idService.generateID()).thenReturn(id);
+        Product actualProduct = productService.saveProduct(productToSave);
 
         // THEN
         assertEquals(expectedProduct, actualProduct);

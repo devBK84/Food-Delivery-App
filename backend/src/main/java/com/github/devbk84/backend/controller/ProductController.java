@@ -19,28 +19,29 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
 
         return productService.getAllProducts();
     }
 
     @GetMapping(path = "/{id}")
-    public Product getProductById (@PathVariable String id){
+    public Product getProductById(@PathVariable String id) {
         return productService.getProductById(id);
     }
 
     @PutMapping(path = "/{id}")
-    public Product updateEntry (@PathVariable String id, @RequestBody ProductDTO entry){
-        return productService.updateEntry(id, entry);
+    public Product updateEntry(@PathVariable String id, @RequestBody ProductDTO entry) {
+        return productService.updateProduct(id, entry);
     }
 
     @DeleteMapping(path = "/{id}")
-    public void deleteProduct (@PathVariable String id){
+    public void deleteProduct(@PathVariable String id) {
         productService.deleteEntryByID(id);
     }
+
     @PostMapping
-    public Product saveEntry (@RequestBody ProductDTO entry){
-        return productService.saveEntry(entry);
+    public Product saveEntry(@RequestBody ProductDTO entry) {
+        return productService.saveProduct(entry);
     }
 }
 

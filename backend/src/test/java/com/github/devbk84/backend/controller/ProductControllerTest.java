@@ -40,7 +40,7 @@ class ProductControllerTest {
 
     @Test
     @DirtiesContext
-    void getProductsById() throws Exception {
+    void getProductsById_shouldReturnProduct_whenIdIsInvalid() throws Exception {
         productRepo.save(new Product(
                 "69",
                 "Milk",
@@ -54,7 +54,7 @@ class ProductControllerTest {
 
     @Test
     @DirtiesContext
-    void deleteProduct() throws Exception {
+    void deleteProduct_CannotBeFound() throws Exception {
 
         Product product = new Product(
                 "8",
