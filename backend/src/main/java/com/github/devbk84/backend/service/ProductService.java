@@ -24,10 +24,10 @@ public class ProductService {
     }
 
     public Product getProductById(String id) {
-        return productRepo.findById(id).orElseThrow(); }
+        return productRepo.findById(id).orElseThrow();
+    }
 
-
-    public Product updateEntry(String id, ProductDTO entryUpdate) {
+    public Product updateProduct(String id, ProductDTO entryUpdate) {
         Product toEdit = new Product(
                 id,
                 entryUpdate.name(),
@@ -35,13 +35,14 @@ public class ProductService {
                 entryUpdate.orderFavorites(),
                 entryUpdate.price());
 
-            return productRepo.save(toEdit);
+        return productRepo.save(toEdit);
     }
 
-    public void deleteEntryByID(String id) { productRepo.deleteById(id);
+    public void deleteEntryByID(String id) {
+        productRepo.deleteById(id);
     }
 
-    public Product saveEntry( ProductDTO entryUpdate) {
+    public Product saveProduct(ProductDTO entryUpdate) {
         Product toEdit = new Product(
                 idService.generateID(),
                 entryUpdate.name(),
