@@ -1,6 +1,6 @@
 package com.github.devbk84.backend.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+
 import com.github.devbk84.backend.models.Product;
 import com.github.devbk84.backend.repo.ProductRepo;
 import org.junit.jupiter.api.Test;
@@ -11,10 +11,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.web.context.WebApplicationContext;
 
 import java.math.BigDecimal;
 
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -28,13 +29,7 @@ class ProductControllerTest {
     private MockMvc mockMvc;
 
     @Autowired
-    private WebApplicationContext context;
-
-    @Autowired
     private ProductRepo productRepo;
-
-    @Autowired
-    private ObjectMapper objectMapper;
 
 
     @Test
@@ -48,10 +43,31 @@ class ProductControllerTest {
     @Test
     @DirtiesContext
     void getProductsById() throws Exception {
-        productRepo.save(new Product("69",
-                "Milch", "Test",
-                "orderFav", new BigDecimal(0)));
+        productRepo.save(new Product(
+                "69",
+                "Milk",
+                "Test",
+                "orderFav",
+                new BigDecimal(0)));
         mockMvc.perform(get("/api/products/69"))
+                .andExpect(status().isOk());
+
+    }
+
+    @Test
+    @DirtiesContext
+    void deleteProduct() throws Exception {
+
+        Product product = new Product(
+                "8",
+                "Milk",
+                "Test",
+                "orderFav",
+                new BigDecimal(1)
+        );
+        productRepo.save(product);
+
+        mockMvc.perform(delete("/api/products/" + product.id()))
                 .andExpect(status().isOk());
 
     }
