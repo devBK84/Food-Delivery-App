@@ -73,7 +73,7 @@ class ProductServiceTest {
     @Test
     void saveProduct() {
         // GIVEN
-        String id ="84";
+        String id = "84";
         Product expectedProduct = new Product(
                 id,
                 "Milk",
@@ -96,5 +96,35 @@ class ProductServiceTest {
         // THEN
         assertEquals(expectedProduct, actualProduct);
         verify(productRepo).save(expectedProduct);
+    }
+
+    @Test
+    void updateProduct() {
+        // GIVEN
+        String id = "1";
+        Product productToAdd = new Product(
+                id,
+                "Milk",
+                "Test",
+                "Test",
+                new BigDecimal("1.50")
+        );
+
+        ProductDTO expectedProduct = new ProductDTO(
+                "Milk",
+                "Test",
+                "Test",
+                new BigDecimal("1.50")
+        );
+        // WHEN
+        when(idService.generateID()).thenReturn(id);
+        when(productRepo.save(productToAdd)).thenReturn(productToAdd);
+        Product updateProduct = productService.updateProduct("1", expectedProduct);
+
+
+        // THEN
+        assertEquals(updateProduct, productToAdd);
+        verify(productRepo).save(productToAdd);
+
     }
 }
