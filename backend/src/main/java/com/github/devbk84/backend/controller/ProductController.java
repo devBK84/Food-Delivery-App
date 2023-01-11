@@ -30,7 +30,7 @@ public class ProductController {
     }
 
     @PutMapping(path = "/{id}")
-    public Product updateEntry(@PathVariable String id, @RequestBody ProductDTO entry) {
+    public Product updateProduct(@PathVariable String id, @RequestBody ProductDTO entry) {
         return productService.updateProduct(id, entry);
     }
 
@@ -40,7 +40,7 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product saveEntry(@RequestBody ProductDTO entry) {
+    public Product saveProduct(@RequestBody ProductDTO entry) {
         return productService.saveProduct(entry);
     }
 }
