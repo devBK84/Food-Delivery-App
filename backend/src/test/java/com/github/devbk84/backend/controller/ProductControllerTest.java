@@ -72,18 +72,41 @@ class ProductControllerTest {
 
     @Test
     @DirtiesContext
-    void saveProduct_ExpectStatusIsOk() throws Exception{
+    void saveProduct_ExpectStatusIsOk() throws Exception {
         mockMvc.perform(post("/api/products")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(
-                        """
-                                {"name": "Milk",
-                                "description": "Test",
-                                "orderFavorites": "orderFav",
-                                "price": "0" }
                                 """
+                                        {"name": "Milk",
+                                        "description": "Test",
+                                        "orderFavorites": "orderFav",
+                                        "price": "0" }
+                                        """
                         ))
                 .andExpect(status().isOk());
     }
 
+    @Test
+    @DirtiesContext
+    void updateProduct_ExpectStatusIsOk() throws Exception {
+        Product product = new Product(
+                "8",
+                "Milk",
+                "Test",
+                "orderFav",
+                new BigDecimal(1)
+        );
+        productRepo.save(product);
+        mockMvc.perform(put("/api/products/" + product.id())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(
+                                """
+                                        {"name": "Milk",
+                                        "description": "Test",
+                                        "orderFavorites": "orderFav",
+                                        "price": "0" }
+                                        """
+                        ))
+                .andExpect(status().isOk());
+    }
 }
