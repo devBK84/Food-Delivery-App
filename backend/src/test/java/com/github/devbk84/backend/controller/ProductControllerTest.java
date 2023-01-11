@@ -7,14 +7,14 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.math.BigDecimal;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -32,7 +32,7 @@ class ProductControllerTest {
 
     @Test
     @DirtiesContext
-    void getAllProducts() throws Exception {
+    void getAllProducts_whenNoProductsInDB_thenReturnEmptyList() throws Exception {
         mockMvc.perform(get("/api/products"))
                 .andExpect(status().isOk())
                 .andExpect(content().json("[]"));
@@ -68,6 +68,22 @@ class ProductControllerTest {
         mockMvc.perform(delete("/api/products/" + product.id()))
                 .andExpect(status().isOk());
 
+    }
+
+    @Test
+    @DirtiesContext
+    void saveProduct_ExpectStatusIsOk() throws Exception{
+        mockMvc.perform(post("/api/products")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(
+                        """
+                                {"name": "Milk",
+                                "description": "Test",
+                                "orderFavorites": "orderFav",
+                                "price": "0" }
+                                """
+                        ))
+                .andExpect(status().isOk());
     }
 
 }
