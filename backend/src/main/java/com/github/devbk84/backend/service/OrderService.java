@@ -2,6 +2,8 @@ package com.github.devbk84.backend.service;
 
 import com.github.devbk84.backend.models.Order;
 import com.github.devbk84.backend.models.OrderDTO;
+import com.github.devbk84.backend.models.Product;
+import com.github.devbk84.backend.models.ProductDTO;
 import com.github.devbk84.backend.repo.OrderRepo;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -35,4 +37,17 @@ public class OrderService {
         return newOrder;
     }
 
+    public Order addProductToAnOrder(String Id, ProductDTO entryUpdate) {
+        Order orderToEdit = orderRepo.findById(Id).orElseThrow();
+        List<Product> productList = orderToEdit.products();
+        productList.add(new Product(
+                idService.generateID(),
+                entryUpdate.name(),
+                entryUpdate.description(),
+                entryUpdate.orderFavorites(),
+                entryUpdate.price())
+        );
+        Order newOrder = new Order(orderToEdit.id(), orderToEdit.payment(), productList, orderToEdit.ordertBy());
+        return orderRepo.save(newOrder);
+    }
 }
