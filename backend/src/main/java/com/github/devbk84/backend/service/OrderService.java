@@ -5,12 +5,11 @@ import com.github.devbk84.backend.models.OrderDTO;
 import com.github.devbk84.backend.models.Product;
 import com.github.devbk84.backend.models.ProductDTO;
 import com.github.devbk84.backend.repo.OrderRepo;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Repository
+
 @Service
 public class OrderService {
 
@@ -50,4 +49,6 @@ public class OrderService {
         Order newOrder = new Order(orderToEdit.id(), orderToEdit.payment(), productList, orderToEdit.ordertBy());
         return orderRepo.save(newOrder);
     }
+
+
 }
