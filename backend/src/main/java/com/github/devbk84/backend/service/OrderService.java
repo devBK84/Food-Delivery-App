@@ -38,7 +38,7 @@ public class OrderService {
 
     public Order addProductToAnOrder(String Id, ProductDTO entryUpdate) {
         Order orderToEdit = orderRepo.findById(Id).orElseThrow();
-        List<Product> productList = orderToEdit.products();
+        List<Product> productList = new java.util.ArrayList<>(List.copyOf(orderToEdit.products()));
         productList.add(new Product(
                 idService.generateID(),
                 entryUpdate.name(),
@@ -49,6 +49,5 @@ public class OrderService {
         Order newOrder = new Order(orderToEdit.id(), orderToEdit.payment(), productList, orderToEdit.ordertBy());
         return orderRepo.save(newOrder);
     }
-
 
 }
