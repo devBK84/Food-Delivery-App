@@ -19,7 +19,7 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @GetMapping
+    @GetMapping(path ="api/orders/")
     public List<Order> getAllOrders() {
         return orderService.getAllOrders();
     }
