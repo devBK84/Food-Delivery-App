@@ -19,12 +19,12 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @GetMapping(path ="api/orders/")
+    @GetMapping(path = "/")
     public List<Order> getAllOrders() {
         return orderService.getAllOrders();
     }
 
-    @GetMapping(path = "/orders/{id}")
+    @GetMapping(path = "/{id}")
     public Order getOrderById(@PathVariable String id) {
         return orderService.getOrderById(id);
     }
@@ -34,7 +34,7 @@ public class OrderController {
         return orderService.saveOrder(orderDTO);
     }
 
-    @PutMapping(path = "/orders/{id}")
+    @PutMapping(path = "/{id}")
     public Order addProductToAnOrder(@PathVariable String id, @RequestBody ProductDTO entry) {
         return orderService.addProductToAnOrder(id, entry);
     }
