@@ -72,18 +72,37 @@ class OrderControllerTest {
 
     @Test
     void saveOrder() throws Exception {
-        mockMvc.perform(post("/api/orders")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(
-                        """
-                                {
-                                "payment": "paypal",
-                                "products": [],
-                                "ordertBy": "Alf"
-                                }
+        String content = mockMvc.perform(post("/api/orders")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(
                                 """
+                                        {
+                                        "payment": "PayPal",
+                                        "products": [{
+                                        "id": "8",
+                                        "name": "Milk",
+                                        "description": "Test",
+                                        "orderFavorites": "orderFav",
+                                        "price": "1.5"
+                                        }       ],
+                                        "ordertBy": "Nick"
+                                        }
+                                        """
 
-                )).andExpect(status().isOk());
+                        ))
+                .andExpect(status().isOk())
+                .andReturn().getResponse().getContentAsString();
+        Order actualOrder = objectMapper.readValue(content, Order.class);
+        Order expected = new Order(actualOrder.id(),
+                "PayPal",
+                List.of(new Product("8",
+                        "Milk",
+                        "Test",
+                        "orderFav",
+                        new BigDecimal("1.5"))),
+                "Nick");
+
+        assertEquals(expected, actualOrder);
 
     }
 
@@ -102,28 +121,27 @@ class OrderControllerTest {
                                 """
                                                                                   
                                         {
-                                        "id": "8", 
-                                        "name": "Milk", 
-                                        "description": "Test", 
-                                        "orderFavorites": "orderFav", 
+                                        "id": "8",
+                                        "name": "Milk",
+                                        "description": "Test",
+                                        "orderFavorites": "orderFav",
                                         "price": "1.5"
-                                        }                           
-                                                                
+                                        }                                          
                                         """
                         ))
                 .andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString();
-        Order acualOrder = objectMapper.readValue(content, Order.class);
+        Order actualOrder = objectMapper.readValue(content, Order.class);
         Order expected = new Order("455454",
                 "PayPal",
-                List.of(new Product(acualOrder.products().get(0).id(),
+                List.of(new Product(actualOrder.products().get(0).id(),
                         "Milk",
                         "Test",
                         "orderFav",
                         new BigDecimal("1.5"))),
                 "Nick");
 
-        assertEquals(expected, acualOrder);
+        assertEquals(expected, actualOrder);
 
     }
 }
