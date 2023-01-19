@@ -42,7 +42,8 @@ class ProductServiceTest {
                 "Milk",
                 "Test",
                 "orderFav",
-                new BigDecimal("1.50")
+                new BigDecimal("1.50"),
+                "milch"
         );
         productRepo.save(expected);
 
@@ -62,7 +63,8 @@ class ProductServiceTest {
                 "Haferdrink",
                 "Test",
                 "orderFav",
-                new BigDecimal("1.50")
+                new BigDecimal("1.50"),
+                "milch"
         );
 
         doNothing().when(productRepo).deleteById(isA(String.class));
@@ -79,14 +81,16 @@ class ProductServiceTest {
                 "Milk",
                 "Test",
                 "Test",
-                new BigDecimal("1.50")
+                new BigDecimal("1.50"),
+                "milch"
         );
 
         ProductDTO productToSave = new ProductDTO(
                 "Milk",
                 "Test",
                 "Test",
-                new BigDecimal("1.50")
+                new BigDecimal("1.50"),
+                "milch"
         );
         // WHEN
         when(productRepo.save(expectedProduct)).thenReturn(expectedProduct);
@@ -107,14 +111,16 @@ class ProductServiceTest {
                 "Milk",
                 "Test",
                 "Test",
-                new BigDecimal("1.50")
+                new BigDecimal("1.50"),
+                "milch"
         );
 
         ProductDTO expectedProduct = new ProductDTO(
                 "Milk",
                 "Test",
                 "Test",
-                new BigDecimal("1.50")
+                new BigDecimal("1.50"),
+                "milch"
         );
         // WHEN
         when(idService.generateID()).thenReturn(id);
