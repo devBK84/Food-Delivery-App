@@ -6,6 +6,7 @@ public record ProductDTO(
         String name,
         String description,
         String orderFavorites,
-        BigDecimal price
+        BigDecimal price,
+        String shortname
 ) {
 }

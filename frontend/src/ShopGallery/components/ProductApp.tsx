@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {Product} from "../model/Product";
 import axios from "axios";
-import ProductGallery from "./ProductGallery";
+import ProductGallery from "./ProductGallery/ProductGallery";
 
 export default function ProductApp(){
     const [products, setProducts] = useState<Product[]>([])
