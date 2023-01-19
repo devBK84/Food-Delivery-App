@@ -3,5 +3,6 @@ export type Product = {
     name: string,
     description: string,
     orderFavorites: string,
-    price: number
+    price: number,
+    shortname: string
 }

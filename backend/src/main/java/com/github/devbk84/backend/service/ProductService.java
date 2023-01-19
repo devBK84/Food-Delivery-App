@@ -33,7 +33,8 @@ public class ProductService {
                 entryUpdate.name(),
                 entryUpdate.description(),
                 entryUpdate.orderFavorites(),
-                entryUpdate.price());
+                entryUpdate.price(),
+                entryUpdate.shortname());
 
         return productRepo.save(toEdit);
     }
@@ -48,7 +49,8 @@ public class ProductService {
                 entryUpdate.name(),
                 entryUpdate.description(),
                 entryUpdate.orderFavorites(),
-                entryUpdate.price());
+                entryUpdate.price(),
+                entryUpdate.shortname());
 
         return productRepo.save(toEdit);
     }

@@ -1,0 +1,21 @@
+.Article-Milk-Products {
+    align-items: flex-start;
+    display: flex;
+    gap: 6px;
+    min-width: 420px;
+}
+
+img {
+    width: 200px;
+    height: auto;
+    display: grid;
+}
+
+.container {
+    background-color: white;
+    border-radius: 5px;
+    height: 100px;
+    position: relative;
+    width: 100px;
+}
+
