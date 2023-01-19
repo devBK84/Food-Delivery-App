@@ -44,7 +44,8 @@ public class OrderService {
                 entryUpdate.name(),
                 entryUpdate.description(),
                 entryUpdate.orderFavorites(),
-                entryUpdate.price())
+                entryUpdate.price(),
+                entryUpdate.shortname())
         );
         Order newOrder = new Order(orderToEdit.id(), orderToEdit.payment(), productList, orderToEdit.ordertBy());
         return orderRepo.save(newOrder);

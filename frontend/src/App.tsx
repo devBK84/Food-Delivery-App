@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
-import WelcomeScreen from "./ShopGallery/components/WelcomeScreen";
+import WelcomeScreen from "./ShopGallery/components/WelcomeScreen/WelcomeScreen";
 import ProductApp from "./ShopGallery/components/ProductApp";
 
 

@@ -46,7 +46,10 @@ class ProductControllerTest {
                 "Milk",
                 "Test",
                 "orderFav",
-                new BigDecimal(0)));
+                new BigDecimal(0),
+                "milch")
+        );
+
         mockMvc.perform(get("/api/products/69"))
                 .andExpect(status().isOk());
 
@@ -61,7 +64,8 @@ class ProductControllerTest {
                 "Milk",
                 "Test",
                 "orderFav",
-                new BigDecimal(1)
+                new BigDecimal(1),
+                "milch"
         );
         productRepo.save(product);
 
@@ -94,7 +98,8 @@ class ProductControllerTest {
                 "Milk",
                 "Test",
                 "orderFav",
-                new BigDecimal(1)
+                new BigDecimal(1),
+                "milch"
         );
         productRepo.save(product);
         mockMvc.perform(put("/api/products/" + product.id())

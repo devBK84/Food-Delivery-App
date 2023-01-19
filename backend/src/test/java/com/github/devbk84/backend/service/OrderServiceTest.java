@@ -48,7 +48,6 @@ class OrderServiceTest {
                 "PayPal",
                 Collections.emptyList(),
                 "Peter"
-
         );
         orderRepo.save(expected);
 
@@ -102,7 +101,8 @@ class OrderServiceTest {
                         "Haferdrink",
                         "xxxxxy",
                         "test",
-                        new BigDecimal("1.50")
+                        new BigDecimal("1.50"),
+                        "Haferdrink"
                 )), "Hanswurst");
 
         Order expectedOrder = new Order(
@@ -113,12 +113,15 @@ class OrderServiceTest {
                         "Haferdrink",
                         "xxxxxy",
                         "test",
-                        new BigDecimal("1.50")
+                        new BigDecimal("1.50"),
+                        "Haferdrink"
+
                 ), new Product("85",
                         "Test",
                         "test",
                         "Geilo",
-                        new BigDecimal("1.50"))),
+                        new BigDecimal("1.50"),
+                        "Haferdrink")),
                 "Hanswurst");
 
         // WHEN
@@ -129,7 +132,8 @@ class OrderServiceTest {
                 "Test",
                 "test",
                 "Geilo",
-                new BigDecimal("1.50")));
+                new BigDecimal("1.50"),
+                "Haferdrink"));
         // THEN
         verify(orderRepo).save(expectedOrder);
         assertEquals(expectedOrder, actualProduct);

@@ -81,6 +81,7 @@ class OrderControllerTest {
                                         "products": [{
                                         "id": "8",
                                         "name": "Milk",
+                                        "shortname": "milch",
                                         "description": "Test",
                                         "orderFavorites": "orderFav",
                                         "price": "1.5"
@@ -99,7 +100,9 @@ class OrderControllerTest {
                         "Milk",
                         "Test",
                         "orderFav",
-                        new BigDecimal("1.5"))),
+                        new BigDecimal("1.5"),
+                        "milch")
+                ),
                 "Nick");
 
         assertEquals(expected, actualOrder);
@@ -125,7 +128,8 @@ class OrderControllerTest {
                                         "name": "Milk",
                                         "description": "Test",
                                         "orderFavorites": "orderFav",
-                                        "price": "1.5"
+                                        "price": "1.5",
+                                        "shortname": "milch"
                                         }                                          
                                         """
                         ))
@@ -138,8 +142,11 @@ class OrderControllerTest {
                         "Milk",
                         "Test",
                         "orderFav",
-                        new BigDecimal("1.5"))),
-                "Nick");
+                        new BigDecimal("1.5"),
+                        "milch")
+
+                ), "Nick");
+
 
         assertEquals(expected, actualOrder);
 
