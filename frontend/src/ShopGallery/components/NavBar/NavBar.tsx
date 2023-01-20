@@ -14,21 +14,21 @@ export default function NavBar() {
     return (
         <div className="NavBar">
             <div className="flex-row">
-            <img className="icon-home" src= {icon_home} alt="icon-home" />
+                <img className="icon-home" src={icon_home} alt="icon-home"/>
 
-            <div className="stroke-container">
-                <img className="stroke-1" src= {stroke_1_101} alt="Stroke 1" />
-                <img className="stroke-3" src= {stroke_3_30} alt="Stroke 3" />
-                <img className="stroke-5" src= {stroke_3_30} alt="Stroke 5" />
-                <img className="stroke-7" src= {stroke_7_10} alt="Stroke 7" />
-            </div>
-            <div className="overlap-group">
-                <img className="stroke-3-1" src={stroke_3_13} alt="Stroke 3" />
-            </div>
-            <div className="flex-col">
-                <img className="icon-user" src= {profile_10} alt="icon-user" />
-                <img className="line-6" src={line_5_10} alt="Line 6" />
-            </div>
+                <div className="stroke-container">
+                    <img className="stroke-1" src={stroke_1_101} alt="Stroke 1"/>
+                    <img className="stroke-3" src={stroke_3_30} alt="Stroke 3"/>
+                    <img className="stroke-5" src={stroke_3_30} alt="Stroke 5"/>
+                    <img className="stroke-7" src={stroke_7_10} alt="Stroke 7"/>
+                </div>
+                <div className="overlap-group">
+                    <img className="stroke-3-1" src={stroke_3_13} alt="Stroke 3"/>
+                </div>
+                <div className="flex-col">
+                    <img className="icon-user" src={profile_10} alt="icon-user"/>
+                    <img className="line-6" src={line_5_10} alt="Line 6"/>
+                </div>
             </div>
         </div>
     );
