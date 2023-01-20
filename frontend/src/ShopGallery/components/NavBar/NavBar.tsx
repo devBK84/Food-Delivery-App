@@ -9,9 +9,6 @@ import line_5_10 from "../../../static/img/line-5-10@1x.png"
 import stroke_3_30 from "../../../static/img/stroke-3-30@1x.png"
 
 
-
-
-
 export default function NavBar() {
 
     return (
