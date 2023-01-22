@@ -1,21 +1,37 @@
 .Article-Milk-Products {
-    align-items: flex-start;
-    display: flex;
-    gap: 6px;
-    min-width: 420px;
+    margin-left: 65px;
 }
 
-img {
-    width: 200px;
-    height: auto;
-    display: grid;
-}
-
-.container {
+.milk-container {
     background-color: white;
     border-radius: 5px;
     height: 100px;
-    position: relative;
     width: 100px;
 }
+
+.img-milk {
+    height: 96px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 4px;
+    width: 100px;
+}
+
+.milk {
+    left: 37px;
+    letter-spacing: 0;
+    line-height: 11px;
+    position: absolute;
+    text-align: center;
+    top: 9px;
+    white-space: nowrap;
+}
+
+
+img {
+    width: 120%;
+
+}
+
 
