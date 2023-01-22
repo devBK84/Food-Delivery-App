@@ -24,7 +24,7 @@ export default function WelcomeScreen() {
                 <h1 className="title">THE FUTURE <br/> OF (NON) DAIRY</h1>
             </div>
             <div className={"button1"}>
-                <button onClick={handleDetailsClick} className="button">Los geht´s</button>
+                <button onClick={handleDetailsClick} className="button">Let's go</button>
             </div>
         </div>
     );
