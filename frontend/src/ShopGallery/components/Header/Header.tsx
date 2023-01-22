@@ -12,7 +12,7 @@ export default function Header() {
             <div className={"arrow1"}>
                 <ArrowBack></ArrowBack>
             </div>
-            MILCH
+            WELCOME BY MILKLY
 
             <div className={"background"} style={{backgroundImage: `url(${background})`}}>
 

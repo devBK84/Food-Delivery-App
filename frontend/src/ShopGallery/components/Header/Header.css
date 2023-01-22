@@ -5,8 +5,8 @@
     color: white;
     background-size: cover;
     display: flex;
-    min-height: 100px;
-    padding: 8.5px 16.5px;
+    min-height: 80px;
+    padding: 2.5px 16.5px;
     position: fixed;
     width: 465px;
     z-index: 1;
