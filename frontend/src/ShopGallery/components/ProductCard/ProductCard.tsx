@@ -3,7 +3,6 @@ import "../../../App.css"
 import "../ProductCard/ProductCard.css";
 import {Product} from "../../model/Product";
 import {useNavigate} from "react-router-dom";
-import background from "../../../static/img/path-567@1x.png";
 
 
 type ProductCardProps = {
@@ -21,7 +20,6 @@ export default function ProductCard(props: ProductCardProps) {
     }
 
 
-
     return (
 
         <div className="Article-Milk-Products">
@@ -37,7 +35,6 @@ export default function ProductCard(props: ProductCardProps) {
             </div>
 
         </div>
-
 
     );
 }

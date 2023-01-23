@@ -10,7 +10,7 @@ function useProduct(id: string | undefined) {
             getProductById(id)
         }
 
-    }, [])
+    }, [id])
 
     function getProductById(id: string) {
         axios.get("/api/products/" + id)
