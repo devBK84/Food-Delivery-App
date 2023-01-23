@@ -1,10 +1,9 @@
 .welcomeScreen {
     overflow: auto;
-    height: 1023px;
-    margin-left: -365px;
+    height: 985px;
+    margin-left: -353px;
     margin-top: -211px;
     position: relative;
-    width: 825px;
 }
 
 .hintergrund {
@@ -13,18 +12,18 @@
 }
 
 .banderole_-logo {
-    height: 440px;
-    left: 520px;
+    height: 450px;
+    left: 495px;
     object-fit: cover;
     position: absolute;
-    width: 176px;
+    width: 175px;
 }
 
 .title {
     color: black;
     font-size: 28px;
     font-weight: 700;
-    left: 488px;
+    left: 465px;
     letter-spacing: 1px;
     line-height: 35px;
     position: absolute;
@@ -34,8 +33,8 @@
 }
 
 .cit-kar-250222-5 {
-    height: 380px;
-    left: 424px;
+    height: 340px;
+    left: 402px;
     object-fit: cover;
     position: absolute;
     top: 582px;
@@ -48,15 +47,11 @@
     font-size: 18px;
     height: 45px;
     width: 175px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }
 
 .button1 {
     display: flex;
-    margin-left: 10rem;
+    margin-left: 8rem;
 }
 
 
