@@ -17,23 +17,23 @@ export default function ProductCard(props: ProductCardProps) {
     const navigate = useNavigate()
 
     function handleDetailsClick() {
-        navigate("/details/" + props.product.id)
+        navigate("/products/" + props.product.id)
     }
 
-    return (
-        <div>
-            <div className="Article-Milk-Products">
-                <div className="card border-0 productCard" onClick={handleDetailsClick}>
-                    <div className="milk-container">
-                        <img className="img"
-                             src={"http://localhost:8080/bild-" + props.product.shortname.toLowerCase() + ".png"}
-                             alt={props.product.shortname}/>
-                    </div>
-                    <div className="bg-carousel"></div>
-                    <div>
-                    </div>
-                </div>
 
+
+    return (
+
+        <div className="Article-Milk-Products">
+            <div className="card border-0 productCard" onClick={handleDetailsClick}>
+                <div className="milk-container">
+                    <img className="img"
+                         src={"http://localhost:8080/bild-" + props.product.shortname.toLowerCase() + ".png"}
+                         alt={props.product.shortname}/>
+                </div>
+                <div className="bg-carousel"></div>
+                <div>
+                </div>
             </div>
 
         </div>

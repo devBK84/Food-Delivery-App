@@ -15,12 +15,13 @@ export default function ProductDetails() {
     const [product, setProduct] = useState<Product>()
 
     const id: string | undefined = params.id
-
+    console.log(id)
+    // TODO: Anschließen löschen
     useEffect(() => {
         if (id) {
             getProductById(id)
         }
-    }, [id])
+    }, [])
 
     function getProductById(id: string) {
         axios.get("/api/product/details/" + id)
