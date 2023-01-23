@@ -1,5 +1,4 @@
 import React from "react";
-import "../NavBar/NavBar.css"
 import background from "../../../static/img/path-566-10@1x.png"
 import "../Header/Header.css"
 import {ArrowBack} from "@mui/icons-material";
