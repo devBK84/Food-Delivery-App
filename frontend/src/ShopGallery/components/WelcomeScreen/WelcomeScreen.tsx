@@ -12,7 +12,7 @@ export default function WelcomeScreen() {
     const navigate = useNavigate()
 
     function handleDetailsClick() {
-        navigate("/home/products")
+        navigate("/products")
     }
 
     return (

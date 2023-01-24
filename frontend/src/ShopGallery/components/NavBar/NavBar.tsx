@@ -20,6 +20,7 @@ export default function NavBar(props: navBarProps) {
     function handleCheckOutClick() {
         navigate("/checkout/")
     }
+
     function handleGalleryClick() {
         navigate("/products/")
     }
