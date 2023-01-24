@@ -5,7 +5,6 @@ import stroke_1_101 from "../../../static/img/stroke-1-101@1x.png"
 import stroke_7_10 from "../../../static/img/stroke-7-10@1x.png"
 import stroke_3_13 from "../../../static/img/stroke-3-13@1x.png"
 import profile_10 from "../../../static/img/profile-10@1x.png"
-import line_5_10 from "../../../static/img/line-5-10@1x.png"
 import stroke_3_30 from "../../../static/img/stroke-3-30@1x.png"
 import {useNavigate} from "react-router-dom";
 
@@ -21,26 +20,27 @@ export default function NavBar(props: navBarProps) {
     function handleCheckOutClick() {
         navigate("/checkout/")
     }
-
+    function handleGalleryClick() {
+        navigate("/products/")
+    }
 
     return (
         <div className="NavBar">
             <div className="flex-row">
-                <img className="icon-home" src={icon_home} alt="icon-home"/>
+                <img onClick={handleGalleryClick} className="icon-home" src={icon_home} alt="icon-home"/>
 
                 <div className="stroke-container">
                     <img className="stroke-1" src={stroke_1_101} alt="Stroke 1"/>
                     <img className="stroke-3" src={stroke_3_30} alt="Stroke 3"/>
                     <img className="stroke-5" src={stroke_3_30} alt="Stroke 5"/>
-                    <img onClick={handleCheckOutClick} className="stroke-7" src={stroke_7_10} alt="Stroke 7"/>
-                    {props.amountArticles}
+                    <img onClick={handleCheckOutClick} className="shopping-card" src={stroke_7_10} alt="Stroke 7"/>
+                    <p>{props.amountArticles}</p>
                 </div>
                 <div className="overlap-group">
                     <img className="stroke-3-1" src={stroke_3_13} alt="Stroke 3"/>
                 </div>
                 <div className="flex-col">
                     <img className="icon-user" src={profile_10} alt="icon-user"/>
-                    <img className="line-6" src={line_5_10} alt="Line 6"/>
                 </div>
             </div>
         </div>

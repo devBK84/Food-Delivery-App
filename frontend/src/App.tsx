@@ -24,14 +24,17 @@ function App() {
         <div className="App">
 
             <BrowserRouter>
+
                 <Routes>
                     <Route path={"/"} element={<WelcomeScreen/>}></Route>
-                    <Route path={"/products"} element={<ProductApp/>}></Route>
-                    <Route path={"/products/:id"}
-                           element={<ProductDetail handleCardProduct={addProductToCard}/>}></Route>
-                    <Route path={"/checkout/"} element={<CheckOut products={cardProducts}/>}></Route>
+                    <Route path={"/home"} element={<NavBar amountArticles={cardProducts.length}></NavBar>}>
+                        <Route path={"/home/products"} element={<ProductApp/>}></Route>
+                        <Route path={"/home/products/:id"}
+                               element={<ProductDetail handleCardProduct={addProductToCard}/>}></Route>
+                        <Route path={"/home/checkout/"} element={<CheckOut products={cardProducts}/>}></Route>
+                    </Route>
                 </Routes>
-                <NavBar amountArticles={cardProducts.length}></NavBar>
+
             </BrowserRouter>
 
         </div>

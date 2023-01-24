@@ -23,7 +23,6 @@ export default function ProductGallery(props: ShopGalleryProps) {
 
     return (
         <div>
-            <Header></Header>
             <div className={"background"} style={{backgroundImage: `url(${background})`}}>
                 <div className={"product-gallery"}>
                     {productsCards}
