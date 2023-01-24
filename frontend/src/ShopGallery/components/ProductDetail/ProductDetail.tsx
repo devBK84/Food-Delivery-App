@@ -6,9 +6,13 @@ import axios from "axios";
 import "../ProductDetail/ProductDetail.css"
 import {Product} from "../../model/Product";
 import Header from "../Header/Header";
-import NavBar from "../NavBar/NavBar";
 
-export default function ProductDetails() {
+
+type ProductDetailsProps = {
+    handleCardProduct(product: Product | undefined): void
+}
+
+export default function ProductDetails(props: ProductDetailsProps) {
 
     const params = useParams()
     const [product, setProduct] = useState<Product>()
@@ -32,6 +36,10 @@ export default function ProductDetails() {
             .catch(console.error)
     }
 
+    function handleCardProduct() {
+        props.handleCardProduct(product)
+    }
+
     return (
         <div>
             <Header></Header>
@@ -44,6 +52,7 @@ export default function ProductDetails() {
                             <img className="product-detail_img"
                                  src={"http://localhost:8080/bild-" + product.shortname.toLowerCase() + ".png"}
                                  alt="Weidemilk"/>
+                            <button onClick={handleCardProduct}>Add To Card</button>
                         </div>
                         <div className={"Container"}>
                         </div>
@@ -52,9 +61,9 @@ export default function ProductDetails() {
                             <h1> {product.name}</h1>
                             <hr/>
                             {product.name &&
+                                product.description &&
                                 <article className={"overviewArticle"}><h3>Description:</h3>{product.name}
                                 </article>}
-                            <NavBar></NavBar>
                         </div>
 
                     </div>

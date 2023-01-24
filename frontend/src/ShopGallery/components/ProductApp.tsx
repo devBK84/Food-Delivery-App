@@ -3,7 +3,7 @@ import {Product} from "../model/Product";
 import axios from "axios";
 import ProductGallery from "./ProductGallery/ProductGallery";
 
-export default function ProductApp(){
+export default function ProductApp() {
     const [products, setProducts] = useState<Product[]>([])
     useEffect(() => {
         getProducts()
@@ -14,6 +14,7 @@ export default function ProductApp(){
             setProducts(response.data)
         }).catch(error => console.error(error))
     }
+
     return (
         <div>
             <ProductGallery products={products}/>
