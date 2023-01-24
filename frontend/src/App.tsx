@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
@@ -7,7 +7,7 @@ import ProductApp from "./ShopGallery/components/ProductApp";
 import ProductDetail from "./ShopGallery/components/ProductDetail/ProductDetail";
 import CheckOut from "./ShopGallery/components/CheckOut/CheckOut";
 import {Product} from "./ShopGallery/model/Product";
-import NavBar from "./ShopGallery/components/NavBar/NavBar";
+import axios from "axios";
 
 
 function App() {
@@ -20,6 +20,18 @@ function App() {
         ])
     }
 
+    const [products, setProducts] = useState<Product[]>([])
+    const getProducts = useCallback(() => {
+        axios.get("/api/products").then((response) => {
+            setProducts(response.data)
+        }).catch(error => console.error(error))
+    }, [])
+
+
+    useEffect(() => {
+        getProducts()
+    }, [getProducts])
+
     return (
         <div className="App">
 
@@ -27,12 +39,10 @@ function App() {
 
                 <Routes>
                     <Route path={"/"} element={<WelcomeScreen/>}></Route>
-                    <Route path={"/home"} element={<NavBar amountArticles={cardProducts.length}></NavBar>}>
-                        <Route path={"/home/products"} element={<ProductApp/>}></Route>
-                        <Route path={"/home/products/:id"}
-                               element={<ProductDetail handleCardProduct={addProductToCard}/>}></Route>
-                        <Route path={"/home/checkout/"} element={<CheckOut products={cardProducts}/>}></Route>
-                    </Route>
+                    <Route path={"/products"} element={<ProductApp amountArticles={cardProducts.length} products={products}/>}/>
+                    <Route path={"/checkout/"} element={<CheckOut products={cardProducts}/>}></Route>
+                    <Route path={"/products/:id"}
+                           element={<ProductDetail amountArticles={cardProducts.length} handleCardProduct={addProductToCard}/>}></Route>
                 </Routes>
 
             </BrowserRouter>

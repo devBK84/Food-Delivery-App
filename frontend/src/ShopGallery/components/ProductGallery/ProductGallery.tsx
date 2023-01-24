@@ -1,7 +1,6 @@
 import React from "react";
 import {Product} from "../../model/Product";
 import ProductCard from "../ProductCard/ProductCard";
-import Header from "../Header/Header";
 
 import "../ProductGallery/ProductGallery.css";
 import background from "../../../static/img/path-567@1x.png"

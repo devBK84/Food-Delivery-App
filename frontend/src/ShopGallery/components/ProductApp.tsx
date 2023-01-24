@@ -1,23 +1,24 @@
-import {useEffect, useState} from "react";
 import {Product} from "../model/Product";
-import axios from "axios";
+
 import ProductGallery from "./ProductGallery/ProductGallery";
+import React from "react";
+import NavBar from "./NavBar/NavBar";
+import Header from "./Header/Header";
 
-export default function ProductApp() {
-    const [products, setProducts] = useState<Product[]>([])
-    useEffect(() => {
-        getProducts()
-    }, [])
+type productAppProps = {
+    products: Product[],
+    amountArticles:number
+}
+export default function ProductApp(props: productAppProps) {
 
-    function getProducts() {
-        axios.get("/api/products").then((response) => {
-            setProducts(response.data)
-        }).catch(error => console.error(error))
-    }
 
     return (
         <div>
-            <ProductGallery products={products}/>
+           <div>
+               <Header/>
+           </div>
+            <ProductGallery products={props.products}/>
+            <NavBar amountArticles={props.amountArticles}/>
         </div>
     )
 }

@@ -6,10 +6,12 @@ import axios from "axios";
 import "../ProductDetail/ProductDetail.css"
 import {Product} from "../../model/Product";
 import Header from "../Header/Header";
+import NavBar from "../NavBar/NavBar";
 
 
 type ProductDetailsProps = {
-    handleCardProduct(product: Product | undefined): void
+    handleCardProduct(product: Product | undefined): void,
+    amountArticles:number
 }
 
 export default function ProductDetails(props: ProductDetailsProps) {
@@ -65,7 +67,7 @@ export default function ProductDetails(props: ProductDetailsProps) {
                                 <article className={"overviewArticle"}><h3>Description:</h3>{product.name}
                                 </article>}
                         </div>
-
+                        <NavBar amountArticles={props.amountArticles}/>
                     </div>
 
                 }
