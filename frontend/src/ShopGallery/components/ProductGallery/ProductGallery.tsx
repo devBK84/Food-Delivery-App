@@ -2,7 +2,7 @@ import React from "react";
 import {Product} from "../../model/Product";
 import ProductCard from "../ProductCard/ProductCard";
 import Header from "../Header/Header";
-import NavBar from "../NavBar/NavBar";
+
 import "../ProductGallery/ProductGallery.css";
 import background from "../../../static/img/path-567@1x.png"
 
@@ -23,13 +23,12 @@ export default function ProductGallery(props: ShopGalleryProps) {
 
     return (
         <div>
-          <Header></Header>
+            <Header></Header>
             <div className={"background"} style={{backgroundImage: `url(${background})`}}>
-              <div className={"product-gallery"}>
-                  {productsCards}
-              </div>
+                <div className={"product-gallery"}>
+                    {productsCards}
+                </div>
             </div>
-            <NavBar></NavBar>
         </div>
     )
 }
