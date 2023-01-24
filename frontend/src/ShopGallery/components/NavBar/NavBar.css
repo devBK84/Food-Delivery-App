@@ -1,11 +1,9 @@
 .NavBar {
     background-color: black;
     background-image: url("../../../static/img/path-567-10@1x.png");
-    background-size: cover;
     display: flex;
     height: 64px;
     justify-content: flex-end;
-    left: 0;
     min-width: 360px;
     padding: 25px 50px;
     position: fixed;
@@ -23,10 +21,8 @@
 }
 
 .icon-home {
-    height: 20px;
-    margin-bottom: 2.25px;
-    object-fit: cover;
-    width: 19px;
+    height: 24px;
+
 }
 
 .stroke-container {
@@ -39,11 +35,10 @@
 
 .stroke-1 {
     height: 7px;
-    left: 6px;
-    object-fit: cover;
+    left: 7px;
     position: absolute;
-    top: 0;
-    width: 13px;
+    top: -8px;
+    width: 15px;
 }
 
 .stroke-3 {
@@ -64,13 +59,9 @@
     width: 2px;
 }
 
-.stroke-7 {
-    height: 20px;
-    left: 0;
-    object-fit: cover;
-    position: absolute;
-    top: 5px;
-    width: 24px;
+.shopping-card{
+    height: 25px;
+
 }
 
 .overlap-group {
@@ -105,14 +96,11 @@
 }
 
 .icon-user {
-    height: 20px;
-    margin-right: 0;
-    object-fit: cover;
-    width: 16px;
+    height: 25px;
+
 }
 
-.line-6 {
-    height: 2px;
-    object-fit: cover;
-    width: 30px;
+p{
+    color: crimson;
+    font-weight: bold;
 }

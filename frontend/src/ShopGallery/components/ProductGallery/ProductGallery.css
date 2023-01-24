@@ -1,7 +1,8 @@
 .product-gallery {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
-    padding-top: 16rem;
+    margin-bottom: 155px;
+    padding: 0;
+    justify-content: center;
 }
 

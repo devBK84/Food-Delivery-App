@@ -1,8 +1,8 @@
 import React from "react";
-import "../../../App.css"
 import "../ProductCard/ProductCard.css";
 import {Product} from "../../model/Product";
 import {useNavigate} from "react-router-dom";
+import NavBar from "../NavBar/NavBar";
 
 
 type ProductCardProps = {
@@ -16,25 +16,17 @@ export default function ProductCard(props: ProductCardProps) {
     const navigate = useNavigate()
 
     function handleDetailsClick() {
-        navigate("/products/" + props.product.id)
+        navigate("/home/products/" + props.product.id)
     }
 
 
     return (
 
-        <div className="Article-Milk-Products">
-            <div className="card border-0 productCard" onClick={handleDetailsClick}>
-                <div className="milk-container">
-                    <img className="img"
-                         src={"http://localhost:8080/bild-" + props.product.shortname.toLowerCase() + ".png"}
-                         alt={props.product.shortname}/>
-                </div>
-                <div className="bg-carousel"></div>
-                <div>
-                </div>
+            <div className={"card-container"} onClick={handleDetailsClick}>
+                <h4>{props.product.shortname}</h4>
+                <img className="card-img"
+                     src={"http://localhost:8080/bild-" + props.product.shortname.toLowerCase() + ".png"}
+                     alt={props.product.shortname}/>
             </div>
-
-        </div>
-
     );
 }
