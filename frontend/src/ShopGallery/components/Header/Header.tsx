@@ -4,8 +4,11 @@ import "../Header/Header.css"
 import {ArrowBack} from "@mui/icons-material";
 import {useNavigate} from "react-router-dom";
 
+type headerProps = {
+    title: string
+}
 
-export default function Header() {
+export default function Header(props: headerProps) {
 
     const navigate = useNavigate()
 
@@ -18,7 +21,7 @@ export default function Header() {
             <div className={"arrow1"}>
                 <ArrowBack onClick={handleDetailsClick}></ArrowBack>
             </div>
-            WELCOME BY MILKLY
+            {props.title}
 
             <div className={"background"} style={{backgroundImage: `url(${background})`}}>
 

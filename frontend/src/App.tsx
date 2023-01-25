@@ -39,10 +39,13 @@ function App() {
 
                 <Routes>
                     <Route path={"/"} element={<WelcomeScreen/>}></Route>
-                    <Route path={"/products"} element={<ProductApp amountArticles={cardProducts.length} products={products}/>}/>
-                    <Route path={"/checkout/"} element={<CheckOut products={cardProducts}/>}></Route>
+                    <Route path={"/products"}
+                           element={<ProductApp amountArticles={cardProducts.length} products={products}/>}/>
+                    <Route path={"/checkout/"}
+                           element={<CheckOut products={cardProducts} amountArticles={cardProducts.length}/>}></Route>
                     <Route path={"/products/:id"}
-                           element={<ProductDetail amountArticles={cardProducts.length} handleCardProduct={addProductToCard}/>}></Route>
+                           element={<ProductDetail amountArticles={cardProducts.length}
+                                                   handleCardProduct={addProductToCard}/>}></Route>
                 </Routes>
 
             </BrowserRouter>

@@ -1,6 +1,5 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "../../../App.css"
-import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import "../ProductDetail/ProductDetail.css"
@@ -11,7 +10,7 @@ import NavBar from "../NavBar/NavBar";
 
 type ProductDetailsProps = {
     handleCardProduct(product: Product | undefined): void,
-    amountArticles:number
+    amountArticles: number
 }
 
 export default function ProductDetails(props: ProductDetailsProps) {
@@ -20,8 +19,6 @@ export default function ProductDetails(props: ProductDetailsProps) {
     const [product, setProduct] = useState<Product>()
 
     const id: string | undefined = params.id
-    console.log(id)
-    // TODO: Anschließen löschen
 
     useEffect(() => {
         if (id) {
@@ -44,7 +41,7 @@ export default function ProductDetails(props: ProductDetailsProps) {
 
     return (
         <div>
-            <Header></Header>
+            <Header title={product ? product.shortname : "NO FOUND"}/>
             <div className={"detailsOverview"}>
                 {!product && <p>loading files...</p>}
                 {product &&
