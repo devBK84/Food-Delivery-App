@@ -24,7 +24,7 @@ export default function ProductCard(props: ProductCardProps) {
         <div className={"card-container"} onClick={handleDetailsClick}>
             <h4>{props.product.shortname}</h4>
             <img className="card-img"
-                 src={"http://localhost:8080/bild-" + props.product.shortname.toLowerCase() + ".png"}
+                 src={"/bild-" + props.product.shortname.toLowerCase() + ".png"}
                  alt={props.product.shortname}/>
         </div>
     );

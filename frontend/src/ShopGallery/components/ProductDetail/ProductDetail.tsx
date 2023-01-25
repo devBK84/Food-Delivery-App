@@ -49,7 +49,7 @@ export default function ProductDetails(props: ProductDetailsProps) {
                     <div className={"productOverview"}>
                         <div className={"product-detail_container"}>
                             <img className="product-detail_img"
-                                 src={"http://localhost:8080/bild-" + product.shortname.toLowerCase() + ".png"}
+                                 src={"http:/bild-" + product.shortname.toLowerCase() + ".png"}
                                  alt="Weidemilk"/>
                             <button onClick={handleCardProduct}>Add To Card</button>
                         </div>
