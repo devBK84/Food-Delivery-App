@@ -4,7 +4,7 @@ import icon_home from "../../../static/img/home-16@1x.png"
 import stroke_1_101 from "../../../static/img/stroke-1-101@1x.png"
 import stroke_7_10 from "../../../static/img/stroke-7-10@1x.png"
 import stroke_3_13 from "../../../static/img/stroke-3-13@1x.png"
-import profile_10 from "../../../static/img/profile-10@1x.png"
+import profile_11 from "../../../static/img/profile-11@1x.png"
 import stroke_3_30 from "../../../static/img/stroke-3-30@1x.png"
 import {useNavigate} from "react-router-dom";
 
@@ -41,7 +41,7 @@ export default function NavBar(props: navBarProps) {
                     <img className="stroke-3-1" src={stroke_3_13} alt="Stroke 3"/>
                 </div>
                 <div className="flex-col">
-                    <img className="icon-user" src={profile_10} alt="icon-user"/>
+                    <img className="icon-user" src={profile_11} alt="icon-user"/>
                 </div>
             </div>
         </div>
