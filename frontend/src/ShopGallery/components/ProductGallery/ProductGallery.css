@@ -2,9 +2,14 @@
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 155px;
-    padding-top: 100px;
+    padding-top: 306px;
     justify-content: center;
-   /* margin-top: 100px;*/
-
 }
 
+.header-img {
+    margin-top: 97px;
+    position: fixed;
+    width: 24rem;
+    border-radius: 15px;
+    margin-left: 1em;
+}

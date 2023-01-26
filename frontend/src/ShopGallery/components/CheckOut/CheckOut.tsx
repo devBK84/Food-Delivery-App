@@ -39,12 +39,12 @@ export default function CheckOut(props: Props) {
                         <p>Price: {product.product.price}€</p>
                         <button id={product.product.id} onClick={() => handleCardPlusProduct(product.product)}>+
                         </button>
-
-                        <button onClick={() => handleCardMinusProduct(product.product)}>-</button>
                         <button className={"delete-button"}
                                 onClick={() => handleDeleteChange(product.product.id)}>DELETE
                         </button>
-                        <div>{product.count}</div>
+                        <button onClick={() => handleCardMinusProduct(product.product)}>-</button>
+
+                        <div className={"count1"}>{product.count}</div>
                     </div>
 
 
