@@ -5,7 +5,6 @@ import stroke_1_101 from "../../../static/img/stroke-1-101@1x.png"
 import stroke_7_10 from "../../../static/img/stroke-7-10@1x.png"
 import stroke_3_13 from "../../../static/img/stroke-3-13@1x.png"
 import profile_11 from "../../../static/img/profile-11@1x.png"
-import stroke_3_30 from "../../../static/img/stroke-3-30@1x.png"
 import {useNavigate} from "react-router-dom";
 
 type navBarProps = {
@@ -32,8 +31,6 @@ export default function NavBar(props: navBarProps) {
 
                 <div className="stroke-container">
                     <img className="stroke-1" src={stroke_1_101} alt="Stroke 1"/>
-                    <img className="stroke-3" src={stroke_3_30} alt="Stroke 3"/>
-                    <img className="stroke-5" src={stroke_3_30} alt="Stroke 5"/>
                     <img onClick={handleCheckOutClick} className="shopping-card" src={stroke_7_10} alt="Stroke 7"/>
                     <p>{props.amountArticles}</p>
                 </div>
