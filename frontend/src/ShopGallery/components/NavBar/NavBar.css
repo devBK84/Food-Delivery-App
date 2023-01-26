@@ -10,7 +10,6 @@
     bottom: 0;
 }
 
-
 .flex-row {
     align-items: center;
     align-self: center;
@@ -82,7 +81,7 @@
 
 }
 
-p{
+.amount1 {
     color: white;
     font-weight: bold;
     margin-top: unset;
@@ -90,3 +89,11 @@ p{
     position: absolute;
     right: 1%;
 }
+/*p{
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: unset;
+    top: 5px;
+    position: absolute;
+    right: 1%;
+}*/

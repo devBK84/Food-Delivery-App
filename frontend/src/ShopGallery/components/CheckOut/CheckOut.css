@@ -1,4 +1,23 @@
 .checkout-card_list {
     padding-top: 100px;
+}
 
+.product-card {
+    display: flex;
+    flex-direction: column;
+    border-color: darkgray;
+    align-items: flex-start;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 18px;
+    margin-block: auto;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
+    margin: 0.3rem
+}
+
+.delete-button {
+    padding-right: revert;
+    border-radius: 25px;
+    border-color: black;
 }
