@@ -4,7 +4,7 @@
     display: flex;
     height: 64px;
     justify-content: flex-end;
-    min-width: 360px;
+    min-width: 355px;
     padding: 25px 50px;
     position: fixed;
     bottom: 0;
@@ -21,7 +21,7 @@
 }
 
 .icon-home {
-    height: 24px;
+    height: 2rem;
 
 }
 
@@ -34,33 +34,15 @@
 }
 
 .stroke-1 {
-    height: 7px;
-    left: 7px;
+    height: 6px;
+    left: 49%;
     position: absolute;
-    top: -8px;
+    top: -5px;
     width: 15px;
 }
 
-.stroke-3 {
-    height: 2px;
-    left: 15px;
-    object-fit: cover;
-    position: absolute;
-    top: 11px;
-    width: 2px;
-}
-
-.stroke-5 {
-    height: 2px;
-    left: 8px;
-    object-fit: cover;
-    position: absolute;
-    top: 11px;
-    width: 2px;
-}
-
 .shopping-card{
-    height: 25px;
+    height: 2rem;
 
 }
 
@@ -96,11 +78,15 @@
 }
 
 .icon-user {
-    height: 25px;
+    height: 2rem;
 
 }
 
 p{
-    color: crimson;
+    color: white;
     font-weight: bold;
+    margin-top: unset;
+    top: 5px;
+    position: absolute;
+    right: 1%;
 }
