@@ -1,21 +1,21 @@
 .header {
-    background-image: url("../../../static/img/path-567-10@1x.png");
+    background-image: url(http://localhost:3000/static/media/path-567-10@1x.f1a9de0….png);
     background-color: black;
     font-size: large;
     color: white;
     background-size: cover;
     display: flex;
     min-height: 80px;
-    padding: 2.5px 16.5px;
+    padding: 2.5px 14.5px;
     position: fixed;
+    top: 0;
     width: 388px;
     z-index: 1;
     justify-content: space-between;
     align-items: center;
-   /* margin-top: -100px;*/
 }
 
-.arrow1{
+.arrow1 {
     display: flex;
 }
 

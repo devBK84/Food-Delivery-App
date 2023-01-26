@@ -11,14 +11,21 @@
 }
 
 .detailsOverview {
-    padding-top: 15rem;
+    padding-top: 10rem;
+    overflow: auto;
+
 }
 
 .product-detail_container {
     border: solid grey;
     border-radius: 20px;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 2rem;
     width: 80%;
     aspect-ratio: 1/1;
+}
+
+.product-detail_img {
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
