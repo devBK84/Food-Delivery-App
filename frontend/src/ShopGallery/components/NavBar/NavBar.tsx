@@ -32,7 +32,7 @@ export default function NavBar(props: navBarProps) {
                 <div className="stroke-container">
                     <img className="stroke-1" src={stroke_1_101} alt="Stroke 1"/>
                     <img onClick={handleCheckOutClick} className="shopping-card" src={stroke_7_10} alt="Stroke 7"/>
-                    <p>{props.amountArticles}</p>
+                    <p className={"amount1"}>{props.amountArticles}</p>
                 </div>
                 <div className="overlap-group">
                     <img className="stroke-3-1" src={stroke_3_13} alt="Stroke 3"/>

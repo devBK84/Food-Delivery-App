@@ -51,18 +51,21 @@ export default function ProductDetails(props: ProductDetailsProps) {
                             <img className="product-detail_img"
                                  src={"/bild-" + product.shortname.toLowerCase() + ".png"}
                                  alt="Weidemilk"/>
+                            <p>Price: {product.price}€</p>
                             <button onClick={handleCardProduct}>Add To Card</button>
                         </div>
                         <div className={"Container"}>
                         </div>
 
                         <div className={"productDetailsContainer"}>
-                            <h1> {product.name}</h1>
+                            <h2> {product.name}</h2>
                             <hr/>
                             {product.name &&
                                 product.description &&
+                                product.price &&
                                 <article className={"overviewArticle"}><h3>Description:</h3>{product.name}
                                 </article>}
+
                         </div>
                         <NavBar amountArticles={props.amountArticles}/>
                     </div>
