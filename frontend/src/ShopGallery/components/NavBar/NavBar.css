@@ -16,7 +16,7 @@
     display: flex;
     margin-right: 0;
     margin-top: 10px;
-    min-width:320px;
+    min-width: 320px;
 }
 
 .icon-home {
@@ -40,7 +40,7 @@
     width: 15px;
 }
 
-.shopping-card{
+.shopping-card {
     height: 2rem;
 
 }
@@ -89,11 +89,3 @@
     position: absolute;
     right: 1%;
 }
-/*p{
-    color: #ffffff;
-    font-weight: bold;
-    margin-top: unset;
-    top: 5px;
-    position: absolute;
-    right: 1%;
-}*/
