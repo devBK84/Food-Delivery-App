@@ -18,11 +18,11 @@ export default function CheckOut(props: Props) {
 
 
     function handleCardPlusProduct(product: Product) {
-    props.addProductToCard(product)
+        props.addProductToCard(product)
     }
 
     function handleCardMinusProduct(product: Product) {
-    props.minusProductInCard(product)
+        props.minusProductInCard(product)
     }
 
     function handleDeleteChange(id: string) {
@@ -37,9 +37,10 @@ export default function CheckOut(props: Props) {
                     <div key={product.product.id} className="product-card">
                         <h4>{product.product.name}</h4>
                         <p>Price: {product.product.price}€</p>
-                        <button id={product.product.id} onClick={()=>handleCardPlusProduct(product.product)}>+</button>
+                        <button id={product.product.id} onClick={() => handleCardPlusProduct(product.product)}>+
+                        </button>
 
-                        <button onClick={()=>handleCardMinusProduct(product.product)}>-</button>
+                        <button onClick={() => handleCardMinusProduct(product.product)}>-</button>
                         <button className={"delete-button"}
                                 onClick={() => handleDeleteChange(product.product.id)}>DELETE
                         </button>
