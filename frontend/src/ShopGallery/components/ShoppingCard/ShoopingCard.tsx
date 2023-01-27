@@ -1,5 +1,5 @@
 import React from "react";
-import "../CheckOut/CheckOut.css"
+import "./ShoopingCard.css"
 import NavBar from "../NavBar/NavBar";
 import Header from "../Header/Header";
 import {CardProduct} from "../../model/CardProduct";
@@ -11,10 +11,10 @@ type Props = {
     handleDeleteChange(id: string): void
     addProductToCard(product: Product): void
     minusProductInCard(product: Product): void
+    totalPrice: number
 }
 
-export default function CheckOut(props: Props) {
-    console.log(props.products)
+export default function ShoppingCard(props: Props) {
 
 
     function handleCardPlusProduct(product: Product) {
@@ -49,6 +49,7 @@ export default function CheckOut(props: Props) {
 
 
                 ))}
+                <p>{props.totalPrice}</p>
             </div>
             <NavBar amountArticles={props.amountArticles}/>
         </div>

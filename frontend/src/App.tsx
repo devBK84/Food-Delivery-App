@@ -5,14 +5,15 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import WelcomeScreen from "./ShopGallery/components/WelcomeScreen/WelcomeScreen";
 import ProductApp from "./ShopGallery/components/ProductApp";
 import ProductDetail from "./ShopGallery/components/ProductDetail/ProductDetail";
-import CheckOut from "./ShopGallery/components/CheckOut/CheckOut";
 import {Product} from "./ShopGallery/model/Product";
 import axios from "axios";
 import {CardProduct} from "./ShopGallery/model/CardProduct";
+import ShoppingCard from "./ShopGallery/components/ShoppingCard/ShoopingCard";
 
 
 function App() {
     const [cardProducts, setCardProducts] = useState<CardProduct[]>([])
+    const [totalPrice, setTotalPrice] = useState(0)
 
     function addProductToCard(product: Product) {
         console.log(product.id)
@@ -22,9 +23,9 @@ function App() {
             setCardProducts(prevState => {
                 return prevState.map(cardProduct => {
                     if (cardProduct.product.id === product.id) {
-                        console.log(cardProduct.count)
+                        setTotalPrice(prevState => (prevState + cardProduct.product.price))
                         cardProduct.count++;
-                        console.log(cardProduct.count)
+
 //TODO: Löschen
                     }
                     return cardProduct
@@ -32,6 +33,7 @@ function App() {
             })
         } else {
             setCardProducts(prevState => [...prevState, {product: product, count: 1}])
+            setTotalPrice(prevState => (prevState + product.price))
         }
 
     }
@@ -41,6 +43,7 @@ function App() {
             setCardProducts(prevState => {
                 return prevState.map(cardProduct => {
                     if (cardProduct.count > 0) {
+                        setTotalPrice(prevState => (prevState - cardProduct.product.price))
                         cardProduct.count--;
 
                     }
@@ -48,6 +51,7 @@ function App() {
                 })
             })
         } else {
+            setTotalPrice(prevState => (prevState - product.price))
             setCardProducts(prevState => [...prevState, {product: product, count: 0}])
         }
 
@@ -67,8 +71,12 @@ function App() {
     }, [getProducts])
 
     function handleDeleteChange(id: string) {
+        console.log(totalPrice)
         setCardProducts(prevState => {
             return prevState.filter(product => {
+                if (product.product.id === id) {
+                    setTotalPrice(prevState => prevState - (product.count * product.product.price))
+                }
                 return product.product.id !== id
             })
         })
@@ -84,10 +92,11 @@ function App() {
                     <Route path={"/products"}
                            element={<ProductApp amountArticles={cardProducts.length} products={products}/>}/>
                     <Route path={"/checkout/"}
-                           element={<CheckOut addProductToCard={addProductToCard}
-                                              minusProductInCard={minusProductInCard}
-                                              handleDeleteChange={handleDeleteChange} products={cardProducts}
-                                              amountArticles={cardProducts.length}/>}></Route>
+                           element={<ShoppingCard addProductToCard={addProductToCard}
+                                                  totalPrice={totalPrice}
+                                                  minusProductInCard={minusProductInCard}
+                                                  handleDeleteChange={handleDeleteChange} products={cardProducts}
+                                                  amountArticles={cardProducts.length}/>}></Route>
                     <Route path={"/products/:id"}
                            element={<ProductDetail amountArticles={cardProducts.length}
                                                    handleCardProduct={addProductToCard}/>}></Route>

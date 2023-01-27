@@ -18,7 +18,6 @@ export default function ProductCard(props: ProductCardProps) {
 
 
     return (
-
         <div className={"card-container"} onClick={handleDetailsClick}>
             <h5>{props.product.shortname}</h5>
             <img className="card-img"
