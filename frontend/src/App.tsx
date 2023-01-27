@@ -15,12 +15,17 @@ function App() {
     const [cardProducts, setCardProducts] = useState<CardProduct[]>([])
 
     function addProductToCard(product: Product) {
+        console.log(product.id)
+        console.log(cardProducts)
+
         if (cardProducts.map(cardProduct => cardProduct.product.id).includes(product.id)) {
             setCardProducts(prevState => {
                 return prevState.map(cardProduct => {
                     if (cardProduct.product.id === product.id) {
+                        console.log(cardProduct.count)
                         cardProduct.count++;
-
+                        console.log(cardProduct.count)
+//TODO: Löschen
                     }
                     return cardProduct
                 })
@@ -31,11 +36,11 @@ function App() {
 
     }
 
-    function minusProductInCard(product: Product) {
+    const minusProductInCard = (product: Product) => {
         if (cardProducts.map(cardProduct => cardProduct.product.id).includes(product.id)) {
             setCardProducts(prevState => {
                 return prevState.map(cardProduct => {
-                    if (cardProduct.product.id === product.id) {
+                    if (cardProduct.count > 0) {
                         cardProduct.count--;
 
                     }
@@ -43,7 +48,7 @@ function App() {
                 })
             })
         } else {
-            setCardProducts(prevState => [...prevState, {product: product, count: 1}])
+            setCardProducts(prevState => [...prevState, {product: product, count: 0}])
         }
 
     }

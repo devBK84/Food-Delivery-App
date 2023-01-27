@@ -9,8 +9,6 @@ type ProductCardProps = {
 }
 
 export default function ProductCard(props: ProductCardProps) {
-    // TODO: Bei Abschluß entfernen
-    console.log(props.product)
 
     const navigate = useNavigate()
 
