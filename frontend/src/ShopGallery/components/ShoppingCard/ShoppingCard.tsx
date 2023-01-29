@@ -1,5 +1,5 @@
 import React from "react";
-import "./ShoopingCard.css"
+import "./ShoppingCard.css"
 import NavBar from "../NavBar/NavBar";
 import Header from "../Header/Header";
 import {CardProduct} from "../../model/CardProduct";
@@ -44,13 +44,14 @@ export default function ShoppingCard(props: Props) {
                     <div key={product.product.id} className="product-card">
                         <h4>{product.product.name}</h4>
                         <p>Price: {product.product.price}€</p>
-                        <button id={product.product.id} onClick={() => handleCardPlusProduct(product.product)}>+
-                        </button>
+                        <button className={"minus"} onClick={() => handleCardMinusProduct(product.product)}>-</button>
                         <button className={"delete-button"}
                                 onClick={() => handleDeleteChange(product.product.id)}>DELETE
                         </button>
-                        <button onClick={() => handleCardMinusProduct(product.product)}>-</button>
 
+                        <button className={"plus"} id={product.product.id}
+                                onClick={() => handleCardPlusProduct(product.product)}>+
+                        </button>
                         <div className={"count1"}>{product.count}</div>
                     </div>
 

@@ -8,7 +8,7 @@ import ProductDetail from "./ShopGallery/components/ProductDetail/ProductDetail"
 import {Product} from "./ShopGallery/model/Product";
 import axios from "axios";
 import {CardProduct} from "./ShopGallery/model/CardProduct";
-import ShoppingCard from "./ShopGallery/components/ShoppingCard/ShoopingCard";
+import ShoppingCard from "./ShopGallery/components/ShoppingCard/ShoppingCard";
 
 
 function App() {
@@ -26,7 +26,6 @@ function App() {
                         setTotalPrice(prevState => (prevState + cardProduct.product.price))
                         cardProduct.count++;
 
-//TODO: Löschen
                     }
                     return cardProduct
                 })
