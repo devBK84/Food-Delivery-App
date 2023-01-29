@@ -25,3 +25,30 @@
 .count1 {
     align-items: center;
 }
+
+.total-price-button {
+    background-color: hwb(159deg 40% 40% / 55%);
+    border-radius: 5px;
+    width: 395px;
+    text-align: center;
+    margin: auto;
+    font-weight: bolder;
+}
+
+.order-button2 {
+    display: flex;
+    justify-content: center;
+}
+
+
+.button2 {
+    display: inline-block;
+    background-color: #434343;
+    border-radius: 10px;
+    border: 3px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 20px;
+    width: 400px;
+
+}
