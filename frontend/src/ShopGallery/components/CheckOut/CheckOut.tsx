@@ -14,16 +14,17 @@ export default function CheckOut(props: Props) {
     return (
         <div>
             <Header title={"THANKS FOR ORDERING"}/>
-            <div className={"checkout-overview"}>
-                <img className="citkar10" src={citcar_140422} alt=""/>
-                <p className={"Order-no"}>Order no. 300120-23</p>
-            </div>
-            <p className={"Order-no"}><h4>Order no. 300120-23</h4>
+            <img className="citkar10" src={citcar_140422} alt=""/>
+
+            <p className={"order-no"}>
+                <h4>Order no. 300120-23</h4>
                 <br/>
                 You have the possibility to change or cancel
                 <br/>
                 your order at least 24h before delivery.
             </p>
+
+
             <NavBar amountArticles={props.amountArticles}/>
         </div>
     )
