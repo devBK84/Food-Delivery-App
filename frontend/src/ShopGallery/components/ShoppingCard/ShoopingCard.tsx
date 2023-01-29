@@ -4,6 +4,7 @@ import NavBar from "../NavBar/NavBar";
 import Header from "../Header/Header";
 import {CardProduct} from "../../model/CardProduct";
 import {Product} from "../../model/Product";
+import {useNavigate} from "react-router-dom";
 
 type Props = {
     products: CardProduct[]
@@ -16,6 +17,8 @@ type Props = {
 
 export default function ShoppingCard(props: Props) {
 
+    const navigate = useNavigate()
+
 
     function handleCardPlusProduct(product: Product) {
         props.addProductToCard(product)
@@ -27,6 +30,10 @@ export default function ShoppingCard(props: Props) {
 
     function handleDeleteChange(id: string) {
         props.handleDeleteChange(id)
+    }
+
+    function handleOrderNowClick() {
+        navigate("checkout")
     }
 
     return (
@@ -49,7 +56,11 @@ export default function ShoppingCard(props: Props) {
 
 
                 ))}
-                <p>{props.totalPrice}</p>
+                <hr/>
+                <p className={"total-price-button"}>TOTAL: {props.totalPrice} </p>
+            </div>
+            <div className={"order-button2"}>
+                <button onClick={handleOrderNowClick} className={"button2"}>Order Now</button>
             </div>
             <NavBar amountArticles={props.amountArticles}/>
         </div>
