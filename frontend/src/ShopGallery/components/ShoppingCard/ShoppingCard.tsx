@@ -33,7 +33,7 @@ export default function ShoppingCard(props: Props) {
     }
 
     function handleOrderNowClick() {
-        navigate("checkout")
+        navigate("/checkout")
     }
 
     return (

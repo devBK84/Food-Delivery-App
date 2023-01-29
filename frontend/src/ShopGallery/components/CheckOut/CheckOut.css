@@ -1,0 +1,22 @@
+.checkout-overview {
+    overflow: auto;
+    height: 985px;
+    margin-left: -353px;
+    margin-top: -211px;
+    position: static;
+}
+
+.citkar10 {
+    left: 23px;
+    position: fixed;
+    top: 155px;
+    width: 370px;
+}
+
+.p {
+    color: #434343;
+    width: max-content;
+    position: relative;
+    top: -15rem;
+    margin-left: 50px;
+}

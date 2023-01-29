@@ -9,6 +9,7 @@ import {Product} from "./ShopGallery/model/Product";
 import axios from "axios";
 import {CardProduct} from "./ShopGallery/model/CardProduct";
 import ShoppingCard from "./ShopGallery/components/ShoppingCard/ShoppingCard";
+import CheckOut from "./ShopGallery/components/CheckOut/CheckOut";
 
 
 function App() {
@@ -81,6 +82,7 @@ function App() {
         })
     }
 
+
     return (
         <div className="App">
 
@@ -88,9 +90,8 @@ function App() {
 
                 <Routes>
                     <Route path={"/"} element={<WelcomeScreen/>}></Route>
-                    <Route path={"/products"}
-                           element={<ProductApp amountArticles={cardProducts.length} products={products}/>}/>
-                    <Route path={"/checkout/"}
+                    <Route path={"/products"} element={<ProductApp amountArticles={cardProducts.length} products={products}/>}/>
+                    <Route path={"/shopping-card/"}
                            element={<ShoppingCard addProductToCard={addProductToCard}
                                                   totalPrice={totalPrice}
                                                   minusProductInCard={minusProductInCard}
@@ -99,6 +100,7 @@ function App() {
                     <Route path={"/products/:id"}
                            element={<ProductDetail amountArticles={cardProducts.length}
                                                    handleCardProduct={addProductToCard}/>}></Route>
+                    <Route path={"/checkout/"} element={<CheckOut amountArticles={cardProducts.length}/>}/>
                 </Routes>
 
             </BrowserRouter>

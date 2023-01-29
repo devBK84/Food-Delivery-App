@@ -52,7 +52,7 @@ export default function ProductDetails(props: ProductDetailsProps) {
                                  src={"/bild-" + product.shortname.toLowerCase() + ".png"}
                                  alt="Weidemilk"/>
                             <p>Price: {product.price}€</p>
-                            <button onClick={handleCardProduct}>Add To Card</button>
+                            <button onClick={handleCardProduct}>Add to Basket</button>
                         </div>
                         <div className={"Container"}>
                         </div>
